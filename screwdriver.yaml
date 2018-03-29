@@ -17,4 +17,5 @@ jobs:
             SD_TEMPLATE_PATH: ./sd-template.yaml
     detached-remove:
         steps:
+            - install: npm install
             - remove: ./remove.js -n dummy_template
