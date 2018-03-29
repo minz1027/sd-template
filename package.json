@@ -1,62 +1,12 @@
 {
-  "name": "screwdriver-template-main",
+  "name": "dummy_template",
   "version": "0.0.1",
   "description": "Validates, publishes, and tags templates",
   "main": "index.js",
-  "scripts": {
-    "pretest": "eslint .",
-    "test": "jenkins-mocha --recursive",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
-  },
-  "bin": {
-    "template-publish": "./publish.js",
-    "template-validate": "./validate.js",
-    "template-remove": "./remove.js",
-    "template-tag": "./tag.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:screwdriver-cd/template-main.git"
-  },
-  "homepage": "https://github.com/screwdriver-cd/template-main",
-  "bugs": "https://github.com/screwdriver-cd/screwdriver/issues",
-  "keywords": [
-    "screwdriver",
-    "yahoo"
-  ],
-  "license": "BSD-3-Clause",
-  "author": "Tiffany Kyi <tiffanykyi@gmail.com>",
-  "contributors": [
-    "Dao Lam <daolam112@gmail.com>",
-    "Darren Matsumoto <aeneascorrupt@gmail.com>",
-    "Jeremiah Wuenschel <jeremiah.wuenschel@gmail.com>",
-    "Jerry Zhang <thejerryzhang@gmail.com>",
-    "Min Zhang <minzhang@andrew.cmu.edu>",
-    "Peter Peterson <jedipetey@gmail.com>",
-    "Philip Scott <pscott@zeptohost.com>",
-    "Reetika Rastogi <r3rastogi@gmail.com>",
-    "St. John Johnson <st.john.johnson@gmail.com>",
-    "Tiffany Kyi <tiffanykyi@gmail.com>"
-  ],
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "eslint": "^3.9.1",
-    "eslint-config-screwdriver": "^2.0.9",
-    "eslint-plugin-import": "^2.9.0",
-    "jenkins-mocha": "^3.0.0",
-    "mockery": "^2.0.0",
-    "sinon": "^2.1.0"
-  },
   "dependencies": {
     "js-yaml": "^3.8.3",
     "nomnom": "^1.8.1",
     "request": "^2.81.0",
     "request-promise-native": "^1.0.3"
-  },
-  "release": {
-    "debug": false,
-    "verifyConditions": {
-      "path": "./node_modules/semantic-release/src/lib/plugin-noop.js"
-    }
   }
 }
