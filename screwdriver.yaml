@@ -15,3 +15,6 @@ jobs:
             - publish: ./node_modules/.bin/template-publish
         environment:
             SD_TEMPLATE_PATH: ./sd-template.yaml
+    detached-remove:
+        steps:
+            - remove: ./remove.js -n dummy_template
