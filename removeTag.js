@@ -15,11 +15,6 @@ const opts = nomnom
         required: true,
         help: 'Tag name'
     })
-    .option('version', {
-        abbr: 'v',
-        required: true,
-        help: 'Tag version'
-    })
     .option('json', {
         abbr: 'j',
         flag: true,
@@ -27,17 +22,15 @@ const opts = nomnom
     })
     .parse();
 
-index.tagTemplate({
+index.removeTag({
     name: opts.name,
-    tag: opts.tag,
-    version: opts.version
+    tag: opts.tag
 })
     .then((result) => {
         if (opts.json) {
             console.log(JSON.stringify(result));
         } else {
-            // eslint-disable-next-line max-len
-            console.log(`Template ${opts.name}@${opts.version} was successfully tagged as ${opts.tag}`);
+            console.log(`Tag ${opts.tag} was successfully removed from ${opts.name}`);
         }
     })
     .catch((err) => {
