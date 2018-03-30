@@ -4,12 +4,12 @@ jobs:
     main:
         requires: [~pr, ~commit]
         steps:
-            - install: npm install screwdriver-template-main
+            - install: npm install
             - validate: ./node_modules/.bin/template-validate
     publish:
         requires: [main]
         steps:
-            - install: npm install screwdriver-template-main
+            - install: npm install
             - publish: ./node_modules/.bin/template-publish
             - tag: ./tag.js --name dummy_template --tag latest
     detached-template-remove:
