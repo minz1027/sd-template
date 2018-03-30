@@ -1,23 +1,24 @@
 shared:
     image: node:6
-    steps:
-        - install: npm install
-        - package: npm install screwdriver-template-main
 jobs:
     main:
         requires: [~pr, ~commit]
         steps:
+            - install: npm install screwdriver-template-main
             - validate: ./node_modules/.bin/template-validate
     publish:
         requires: [main]
         steps:
+            - install: npm install screwdriver-template-main
             - publish: ./node_modules/.bin/template-publish
             - tag: ./tag.js --name dummy_template --tag latest
     detached-template-remove:
         steps:
+            - install: npm install
             # For next pass, remove the `-n` flag
             # A pipeline should be able to publish multiple templates, hence name specification
             - remove_template: ./remove.js --name dummy_template
     detached-tag-remove:
         steps:
+            - install: npm install
             - remove_tag: ./tag.js --delete --name dummy_template --tag latest
