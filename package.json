@@ -7,6 +7,7 @@
     "js-yaml": "^3.8.3",
     "nomnom": "^1.8.1",
     "request": "^2.81.0",
-    "request-promise-native": "^1.0.3"
+    "request-promise-native": "^1.0.3",
+    "screwdriver-template-main": "^1.1.2"
   }
 }
