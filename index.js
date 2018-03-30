@@ -135,6 +135,8 @@ function getLatestVersion(name) {
     const templateName = encodeURIComponent(name);
     const url = URL.resolve(hostname, `templates/${templateName}`);
 
+    console.log(url);
+
     return request({
         method: 'GET',
         url,
