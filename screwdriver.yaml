@@ -11,14 +11,14 @@ jobs:
         steps:
             - install: npm install
             - publish: ./node_modules/.bin/template-publish
-            - tag: ./tag.js --name dummy_template --version 1.3.0 --tag first
+            - tag: ./node_modules/.bin/template-tag --name dummy_template --version 1.3.0 --tag first
     detached-template-remove:
         steps:
             - install: npm install
             # For next pass, remove the `-n` flag
             # A pipeline should be able to publish multiple templates, hence name specification
-            - remove_template: ./remove.js --name dummy_template
+            - remove_template: ./node_modules/.bin/template-remove --name dummy_template
     detached-tag-remove:
         steps:
             - install: npm install
-            - remove_tag: ./removeTag.js --name dummy_template --tag first
+            - remove_tag: ./node_modules/.bin/template-remove-tag --name dummy_template --tag first
