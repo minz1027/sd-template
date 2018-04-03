@@ -11,7 +11,8 @@ jobs:
         steps:
             - install: npm install
             - publish: ./node_modules/.bin/template-publish
-            - tag: ./node_modules/.bin/template-tag --name dummy_template --version 1.3.0 --tag first
+            - autotag: ./node_modules/.bin/template-tag --name dummy_template --tag latest
+            - first: ./node_modules/.bin/template-tag --name dummy_template --version 1.3.0 --tag first
     detached-template-remove:
         steps:
             - install: npm install
@@ -21,4 +22,5 @@ jobs:
     detached-tag-remove:
         steps:
             - install: npm install
-            - remove_tag: ./node_modules/.bin/template-remove-tag --name dummy_template --tag first
+            - remove_first: ./node_modules/.bin/template-remove-tag --name dummy_template --tag first
+            - remove_latest: ./node_modules/.bin/template-remove-tag --name dummy_template --tag latest
